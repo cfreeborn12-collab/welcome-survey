@@ -12,7 +12,7 @@
     body {
       margin: 0;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      background: #f7f7f5;
+      background: #B34A2C;
       color: #1a1a1a;
       min-height: 100vh;
       display: flex;
@@ -38,7 +38,7 @@
     /* Progress bar */
     .progress-track {
       height: 4px;
-      background: #eeece7;
+      background: #B34A2C;
       border-radius: 2px;
       overflow: hidden;
       margin-bottom: 1.5rem;
@@ -235,14 +235,13 @@
           label: 'What brings you here?',
           question: 'What\'s your main purpose for joining?',
           options: [
-            { value: 'learn',   label: 'Learn new skills',        next: 'learn_topic' },
-            { value: 'network', label: 'Network with others',     next: 'network_role' },
-            { value: 'build',   label: 'Build a project',         next: 'build_stage' },
-            { value: 'hire',    label: 'Hire or recruit talent',  next: 'hire_urgency' },
+            { value: 'interest',   label: 'Interested in enhancing my health',        next: 'interest' },
+            { value: 'concern', label: 'I have a health concern',     next: 'health_concern' },
+            { value: 'misc',   label: 'Other',         next: 'build_stage' },
           ],
         },
 
-        // ---- LEARN path ----
+        // ---- INTEREST path ----
         learn_topic: {
           label: 'Learning path',
           question: 'What area interests you most?',
@@ -262,13 +261,13 @@
           ],
         },
 
-        // ---- NETWORK path ----
-        network_role: {
-          label: 'Your role',
+        // ---- CONCERN path ----
+        health_concern: {
+          label: 'Your background',
           question: 'Which best describes you?',
           options: [
-            { value: 'founder',   label: 'Founder or executive',  next: 'network_goal' },
-            { value: 'ic',        label: 'Individual contributor', next: 'network_goal' },
+            { value: 'known',   label: 'I know my main areas of concern',  next: 'network_goal' },
+            { value: 'unknown',        label: 'My symptoms are unexplained', next: 'network_goal' },
             { value: 'investor',  label: 'Investor',              next: 'network_goal' },
           ],
         },
@@ -302,26 +301,7 @@
           ],
         },
 
-        // ---- HIRE path ----
-        hire_urgency: {
-          label: 'Hiring timeline',
-          question: 'How soon do you need to hire?',
-          options: [
-            { value: 'immediate', label: 'Immediately (< 1 month)', next: 'hire_role' },
-            { value: 'soon',      label: 'Soon (1-3 months)',       next: 'hire_role' },
-            { value: 'planning',  label: 'Planning ahead',          next: 'hire_role' },
-          ],
-        },
-        hire_role: {
-          label: 'Role type',
-          question: 'What kind of role are you filling?',
-          options: [
-            { value: 'eng',    label: 'Engineering',       next: null },
-            { value: 'design', label: 'Design',            next: null },
-            { value: 'gtm',    label: 'Sales / marketing', next: null },
-            { value: 'ops',    label: 'Operations',        next: null },
-          ],
-        },
+
       },
 
       // ============================================================
